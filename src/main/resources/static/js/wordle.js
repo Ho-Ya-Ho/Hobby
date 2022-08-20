@@ -39,7 +39,7 @@ document.querySelector('.submit').addEventListener('click', function () {
         return null;
     }
     //새로운 format 생성
-    var template = `<div>
+    var template = `<div style="text-align: center">
         <input class="textBox" type="text" maxlength="1">
         <input class="textBox" type="text" maxlength="1">
         <input class="textBox" type="text" maxlength="1">
