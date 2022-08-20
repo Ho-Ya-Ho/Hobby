@@ -1,0 +1,13 @@
+{
+  "properties": [
+    {
+      "name": "spring.sql.schema-locations",
+      "type": "java.lang.String",
+      "description": "Description for spring.sql.schema-locations."
+    },
+    {
+      "name": "spring.spring.batch.initialize-schema=always",
+      "type": "java.lang.String",
+      "description": "Description for spring.spring.batch.initialize-schema=always."
+    }
+  ] }

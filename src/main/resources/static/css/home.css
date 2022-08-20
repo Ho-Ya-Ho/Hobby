@@ -1,0 +1,17 @@
+h1 {
+    color: #fff;
+    padding: 0.7rem 0.7rem 0.7rem 2rem;
+    border-radius: 100vh;
+    background-image: linear-gradient(to left, #f4ff81 0%, #00e676 100%);
+    text-align: center;
+}
+.btn{
+    width: 300px;
+    height: 300px;
+    margin: auto;
+    display: block;
+
+    font-size: 50px;
+    border-radius: 100vh;
+    background-image: linear-gradient(to left, #f4ff81 0%, #00e676 100%);
+}

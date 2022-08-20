@@ -1,0 +1,23 @@
+spring:
+  datasource:
+    url: jdbc:h2:file:D:\DB\H2\TEST_DB
+    username: user
+    password:
+    driver-class-name: org.h2.Driver
+  h2:
+    console:
+      enabled: true
+      path: /h2
+  thymeleaf:
+    cache: false
+    check-template-location: true
+    prefix: classpath:/templates/
+    suffix: .html
+  sql:
+    init:
+      mode: never
+      schema-locations: classpath:/schema.sql
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
