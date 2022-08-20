@@ -29,15 +29,15 @@ document.querySelector('.submit').addEventListener('click', function () {
         input[i].classList.remove('textBox');
         inputFullText += input[i].value;
     }
-    if (count === 0){
-        alert("아쉽네요ㅜㅜ \n정답은 "+answer+"이었습니다.");
-        return null;
-    }
 
     // 정답체크
     if (answer === inputFullText){
         alert("Correct!!!!!! \n정답은 "+answer+"이었습니다.");
         return null;
+    }
+    if (count === 0){
+        alert("아쉽네요ㅜㅜ \n정답은 "+answer+"이었습니다.\n 다시 도전하세요~!~!");
+        location.reload(true);
     }
     //새로운 format 생성
     var template = `<div style="text-align: center">

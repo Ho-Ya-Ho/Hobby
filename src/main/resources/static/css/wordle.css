@@ -11,3 +11,6 @@ input {
     background-image: linear-gradient(to left, #f4ff81 0%, #00e676 100%);
     margin-bottom: 10px;
 }
+.reset {
+    text-align: center;
+}
