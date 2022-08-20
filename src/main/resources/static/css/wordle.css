@@ -5,7 +5,9 @@ input {
     text-align: center;
 }
 .submit{
-    /*width: 50px;*/
-    /*height: 50px;*/
-
+    width: 100px;
+    height: 50px;
+    border-radius: 100vh;
+    background-image: linear-gradient(to left, #f4ff81 0%, #00e676 100%);
+    margin-bottom: 10px;
 }

@@ -5,6 +5,9 @@ h1 {
     background-image: linear-gradient(to left, #f4ff81 0%, #00e676 100%);
     text-align: center;
 }
+h2 {
+    text-align: center;
+}
 .btn{
     width: 300px;
     height: 300px;
