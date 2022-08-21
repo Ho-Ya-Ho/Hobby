@@ -1,4 +1,5 @@
-var answerList = ['basic', 'beach', 'begin', 'below', 'bench', 'black', 'blind', 'blood', 'brain', 'bread'];
+var answerList = ['basic', 'beach', 'begin', 'below', 'bench', 'black',
+                            'blind', 'blood', 'brain', 'bread'];
 var answer = answerList[Math.floor(Math.random() * answerList.length)];
 var count =6;
 document.querySelector('.submit').addEventListener('click', function () {
