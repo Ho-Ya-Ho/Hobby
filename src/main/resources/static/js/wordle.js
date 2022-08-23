@@ -2,6 +2,7 @@ var answerList = ['basic', 'beach', 'begin', 'below', 'bench', 'black',
                             'blind', 'blood', 'brain', 'bread'];
 var answer = answerList[Math.floor(Math.random() * answerList.length)];
 var count =6;
+MoveTextBoxFocus();
 document.querySelector('.submit').addEventListener('click', function () {
 
     var input = document.querySelectorAll('.textBox');
@@ -16,7 +17,7 @@ document.querySelector('.submit').addEventListener('click', function () {
 
     // count출력
     count--;
-    document.getElementById("count").innerText = 'Number of challenges : '+count;
+    document.getElementById("count").innerText = 'Number of challenges remaining : '+count;
 
     // submit에 따라 색갈 변경
     for (let i = 0; i < 5; i++) {
@@ -49,8 +50,18 @@ document.querySelector('.submit').addEventListener('click', function () {
         <input class="textBox" type="text" maxlength="1">
         </div>`;
     document.querySelector('body').insertAdjacentHTML('beforeend', template);
+    MoveTextBoxFocus();
 })
-
-document.querySelector('.textBox').addEventListener('keyup', function (e){
-    e.target.nextElementSibling.focus();
-})
+function MoveTextBoxFocus(){
+    var textBoxSize = document.querySelectorAll('.textBox');
+    textBoxSize.forEach(textBox =>{
+        textBox.addEventListener('keyup', function (e){
+            if(e.keyCode === 8){
+                e.target.previousElementSibling.focus();
+            }
+            else {
+                e.target.nextElementSibling.focus();
+            }
+        })
+    })
+}
