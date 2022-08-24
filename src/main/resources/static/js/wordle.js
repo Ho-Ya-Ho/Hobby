@@ -54,7 +54,7 @@ document.querySelector('.submit').addEventListener('click', function () {
 })
 function MoveTextBoxFocus(){
     const textBoxSize = document.querySelectorAll('.textBox');
-    const isValidKorean = /[\ㄱ-ㅎㅏ-ㅣ가-힣]/;
+    const regExp = /[\ㄱ-ㅎㅏ-ㅣ가-힣]/;
 
     textBoxSize.forEach(textBox =>{
         textBox.addEventListener('keyup', function (e){
@@ -62,8 +62,8 @@ function MoveTextBoxFocus(){
                 e.target.previousElementSibling.focus();
             }
             else if(e.keyCode >= 65 && e.keyCode <= 90) {
-                if (isValidKorean.test(textBox.value)){
-                    textBox.value = textBox.value.replace(isValidKorean, '');
+                if (regExp.test(textBox.value)){
+                    textBox.value = textBox.value.replace(regExp, '');
                     return;
                 }
                 textBox.value = textBox.value.toLowerCase();
