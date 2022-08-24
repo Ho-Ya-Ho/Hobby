@@ -62,14 +62,12 @@ function MoveTextBoxFocus(){
                 e.target.previousElementSibling.focus();
             }
             else if(e.keyCode >= 65 && e.keyCode <= 90) {
-                if (regExp.test(textBox.value)){
+                if (regExp.test(textBox.value) && e.target.nextElementSibling){
                     textBox.value = textBox.value.replace(regExp, '');
                     return;
                 }
                 textBox.value = textBox.value.toLowerCase();
-                if(e.target.nextElementSibling){
-                    e.target.nextElementSibling.focus();
-                }
+                e.target.nextElementSibling.focus();
             }
             else {
                 textBox.value = textBox.value.replace(textBox.value, '');
