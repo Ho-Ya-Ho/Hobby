@@ -1,12 +1,12 @@
-var answerList = ['basic', 'beach', 'begin', 'below', 'bench', 'black',
+const answerList = ['basic', 'beach', 'begin', 'below', 'bench', 'black',
                             'blind', 'blood', 'brain', 'bread'];
-var answer = answerList[Math.floor(Math.random() * answerList.length)];
-var count =6;
+const answer = answerList[Math.floor(Math.random() * answerList.length)];
+let count =6;
 MoveTextBoxFocus();
 document.querySelector('.submit').addEventListener('click', function () {
 
-    var input = document.querySelectorAll('.textBox');
-    var inputFullText = "";
+    const input = document.querySelectorAll('.textBox');
+    let inputFullText = "";
     // 빈칸 체크
     for (let i = 0; i < 5; i++) {
         if (input[i].value === "") {
@@ -42,7 +42,7 @@ document.querySelector('.submit').addEventListener('click', function () {
         location.reload(true);
     }
     //새로운 format 생성
-    var template = `<div style="text-align: center">
+    const template = `<div style="text-align: center">
         <input class="textBox" type="text" maxlength="1">
         <input class="textBox" type="text" maxlength="1">
         <input class="textBox" type="text" maxlength="1">
@@ -53,14 +53,26 @@ document.querySelector('.submit').addEventListener('click', function () {
     MoveTextBoxFocus();
 })
 function MoveTextBoxFocus(){
-    var textBoxSize = document.querySelectorAll('.textBox');
+    const textBoxSize = document.querySelectorAll('.textBox');
+    const isValidKorean = /[\ㄱ-ㅎㅏ-ㅣ가-힣]/;
+
     textBoxSize.forEach(textBox =>{
         textBox.addEventListener('keyup', function (e){
-            if(e.keyCode === 8){
+            if(e.keyCode === 8 && e.target.previousElementSibling){
                 e.target.previousElementSibling.focus();
             }
+            else if(e.keyCode >= 65 && e.keyCode <= 90) {
+                if (isValidKorean.test(textBox.value)){
+                    textBox.value = textBox.value.replace(isValidKorean, '');
+                    return;
+                }
+                textBox.value = textBox.value.toLowerCase();
+                if(e.target.nextElementSibling){
+                    e.target.nextElementSibling.focus();
+                }
+            }
             else {
-                e.target.nextElementSibling.focus();
+                textBox.value = textBox.value.replace(textBox.value, '');
             }
         })
     })
