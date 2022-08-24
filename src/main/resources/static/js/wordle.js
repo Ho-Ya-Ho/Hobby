@@ -62,12 +62,14 @@ function MoveTextBoxFocus(){
                 e.target.previousElementSibling.focus();
             }
             else if(e.keyCode >= 65 && e.keyCode <= 90) {
-                if (regExp.test(textBox.value) && e.target.nextElementSibling){
-                    textBox.value = textBox.value.replace(regExp, '');
+                if (regExp.test(textBox.value)){
+                    textBox.value = textBox.value.replace(textBox.value, '');
                     return;
                 }
-                textBox.value = textBox.value.toLowerCase();
-                e.target.nextElementSibling.focus();
+                if (e.target.nextElementSibling){
+                    textBox.value = textBox.value.toLowerCase();
+                    e.target.nextElementSibling.focus();
+                }
             }
             else {
                 textBox.value = textBox.value.replace(textBox.value, '');
